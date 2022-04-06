@@ -1,0 +1,95 @@
+/*主体样式*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.wall {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.day {
+    background-image: url(../img/day_1920x1080.png);
+}
+
+.night {
+    background-image: url(../img/night_1920x1080.png);
+    transition: 3s;
+    opacity: 0;
+}
+
+button {
+    position: absolute;
+    top: 0;
+}
+
+#night {
+    left: 50px;
+}
+
+
+/*与设置相关的样式*/
+.set_warp {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    z-index: 99;
+}
+
+.ope_set{
+    position: absolute;
+    bottom: 5px;
+    right: -35px;
+    background-image: url(../img/settings.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    transition: 1s;
+}
+.set{
+    width: 0px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.726);
+    transition: 1s;
+    overflow: hidden;
+    white-space:nowrap;
+    border-radius: 5px;
+}
+.set div {
+    margin: 5px 10px;
+}
+
+
+
+
+/*昼夜修改按钮样式*/
+.switch_day_night {
+    position: fixed;
+    bottom: 30px;
+    right: 0px;
+    z-index: 99;
+}
+
+.switch_day_night>svg {
+    width: 96px;
+    height: 54px;
+    visibility: hidden;
+}
+
+.hit {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
