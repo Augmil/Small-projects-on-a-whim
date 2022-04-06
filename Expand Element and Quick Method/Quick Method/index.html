@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Method</title>
+    <script src="js/Quick Method.js"></script>
+    <link rel="stylesheet" href="css/Quick Method.css">
+</head>
+
+<body>
+
+    <main style="max-width: 1080px;margin: 0 auto;">
+
+        <h1>Quick Method</h1>
+        <strong>将js常用功能封装为函数，便于快速调用，提升开发速度。</strong>
+        <hr/>
+
+        <h2>1.各类弹窗功能</h2>
+
+        <h3>1.1 警告框</h3>
+        <p>类似于js自带的alrt()方法，可以弹出一个警告框并且强制用户确认才能退出。</p>
+        </p>使用方法如下：</p>
+        <pre><code lang="javascript">Q.alert("需要显示的警告语")</code></pre>
+        <button onclick="Q.alert('这是一个警告框，如果不点击确定就无法退出，点击窗口外还会抖动提醒。')">测试</button>
+
+        <h3>1.2 输入框</h3>
+        <p>向用户请求输入一些内容，而后执行回调函数，碍于js的限制，暂无法写出同步版本。</p>
+        <p>该函数有三个参数msg, defaultText, callback均为可选。msg为提示用户需要输入的内容，defaultText为默认的内容，callback为回调函数默认将输入的内容作为参数传入。</p>
+        <p> 使用方法如下：</p>
+        <pre><code lang="javascript">
+        Q.input('请输入一些内容后前往控制台查看','这是默认文本',console.log);
+        </code></pre>
+        <button onclick="Q.input('请输入一些内容后前往控制台查看','这是默认文本',console.log)">测试</button>
+
+        <h3>1.3 决策弹窗</h3>
+        <p>让用户进行一些必要的决策或判断</p>
+        <p>该函数有两个参数text, callback均为可选。text为提示用户需要判断的内容，callback为回调函数，用户点击确定则传入true否则传入false。</p>
+        <p> 使用方法如下：</p>
+        <pre><code lang="javascript">
+            Q.confirm("你是否看到了该弹窗", console.log);
+        </code></pre>
+        <button onclick="Q.confirm('你是否看到了该弹窗', console.log);">测试</button>
+
+        <h3>1.4 提示弹窗</h3>
+        <p>提醒用户一些信息，用户能否看到并不重要。该弹窗不会影响用户操作并且不久后会自动消失，其存在的时间与现实的内容长度有关。</p>
+        <p>该函数仅有一个参数text该参数将作为提示信息显示出来。</p>
+        <p> 使用方法如下：</p>
+        <pre><code lang="javascript">
+            Q.tips("不必紧张这只是一个提示信息，几秒后就会自动消失。");
+        </code></pre>
+        <button onclick="Q.tips('不必紧张这只是一个提示信息，几秒后就会自动消失。');">测试</button>
+
+        <h2>2. 常用函数</h2>
+
+        <h3>2.1 动态加载js脚本</h3>
+        <p>利用js动态加载js文件，免于预先在html中引入的麻烦。只加载当前需要的，即用即拿，用完即删。</p>
+        <p>js内容如下：</p>
+        <pre><code>
+ /**
+ * 动态引入 js 文件
+ */
+function loadScript(src, callback) {
+    let script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.onload = () => {
+        callback();
+        script.remove();
+        console.log('若引入的js无效，请回到此处删除 "script.remove();"');
+    };
+    script.src = src;
+    document.getElementsByTagName('head')[0].appendChild(script);
+    return script;
+}
+
+//调用方法
+loadScript('js/loadScript.js', () => {
+    console.log('文件 "js/loadScript.js" 加载成功');
+});
+
+//或者直接调用对象方法
+Q.loadScript('js/loadScript.js', () => {
+    console.log('文件 "js/loadScript.js" 加载成功');
+});
+        </code></pre>
+        <button onclick="Q.loadScript('js/loadScript.js', () => {console.log('文件 js/loadScript.js 加载成功');});">测试</button>
+
+        <h3>2.1 动态加载css样式文件</h3>
+        <p>通过引入css样式库，即时使用，避免无样式可用的尴尬</p>
+        <p>js内容如下：</p>
+        <pre><code>
+ /**
+ * 动态引入 css 文件
+ */
+function loadStyle(href, callback) {
+    let link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = href;
+    document.getElementsByTagName('head')[0].appendChild(link);
+    link.onload = () => {
+        callback();
+    };
+    return link
+}
+
+//调用方法
+loadStyle('css/loadStyle.css', () => {
+    console.log('文件 "css/loadStyle.css" 加载成功');
+});
+
+//或者直接调用对象方法
+Q.loadStyle('css/loadStyle.css', () => {
+    console.log('文件 "css/loadStyle.css" 加载成功');
+});
+        </code></pre>
+        <button onclick="Q.loadStyle('css/loadStyle.css', () => {console.log('文件 css/loadStyle.css 加载成功');});">测试</button>
+
+
+
+
+
+
+
+
+
+    </main>
+
+</body>
+
+</html>

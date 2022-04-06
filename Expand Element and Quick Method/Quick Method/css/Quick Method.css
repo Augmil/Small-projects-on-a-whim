@@ -1,0 +1,186 @@
+/********************************************************
+* 给body元素添加此样式以阻止弹窗下层元素滚动
+*********************************************************/
+
+.QM_cover_body {
+    overflow: hidden;
+}
+
+
+/********************************************************
+* 窗口遮盖层
+*********************************************************/
+
+#QM_cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(20, 7, 7, 0.459);
+}
+
+
+/********************************************************
+* 强制执行类弹窗基本样式
+*********************************************************/
+
+.QM_alert_warp,
+.QM_input_warp,
+.QM_confirm_warp {
+    /*定位至居中*/
+    margin: 50vh auto;
+    transform: translateY(-50%);
+    /*元素基本样式*/
+    padding: 0.5em;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px black;
+    background-color: white;
+    overflow: auto;
+}
+
+
+/********************************************************
+* 提示/警告弹窗
+*********************************************************/
+
+.QM_alert_warp {
+    width: 300px;
+}
+
+.QM_alert_warp strong {
+    margin: 0.6em 0.5em;
+}
+
+.QM_alert_warp p {
+    tab-size: 0.9em;
+    margin: 0.5em 0;
+}
+
+.QM_alert_warp input[type="button"] {
+    display: block;
+    margin: 0.7em 1em 0.2em 1em;
+    height: 2em;
+    width: 5em;
+    text-align: center;
+    float: right;
+}
+
+
+/********************************************************
+* 用户输入弹窗
+*********************************************************/
+
+.QM_input_warp {
+    width: 300px;
+}
+
+.QM_input_warp label {
+    display: block;
+    margin: 0.25em 0;
+    font-weight: bold;
+}
+
+.QM_input_warp input {
+    display: block;
+}
+
+.QM_input_warp input[type="text"] {
+    width: calc(100% - 2em);
+    height: 1.5em;
+    margin: 0.5em auto;
+}
+
+.QM_input_warp input[type="button"] {
+    height: 2em;
+    width: 5em;
+    text-align: center;
+    margin: 0.7em 1em 0.2em 1em;
+    float: right;
+}
+
+
+/********************************************************
+* 判断/选择/提示 弹窗
+*********************************************************/
+
+.QM_confirm_warp {
+    width: 300px;
+}
+
+.QM_confirm_warp strong {
+    margin: 0.6em 0.5em;
+}
+
+.QM_confirm_warp p {
+    tab-size: 0.9em;
+    margin: 0.5em 0;
+}
+
+.QM_confirm_warp input[type="button"] {
+    float: right;
+    margin: 0.7em 1em 0.2em 1em;
+    height: 2em;
+    width: 5em;
+    text-align: center;
+}
+
+
+/********************************************************
+* 信息/消息/操作 提示框
+*********************************************************/
+
+.QM_tips_warp {
+    /*定位至居中偏下*/
+    position: fixed;
+    top: 65vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    /*基本样式属性*/
+    pointer-events: none;
+    padding: 0.5em;
+    border-radius: 3px;
+    z-index: 999;
+    width: 300px;
+    box-shadow: 0 1px 4px white;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.QM_tips_warp p {
+    overflow: hidden;
+    margin: 0.5em;
+    word-break: break-all;
+}
+
+
+/********************************************************
+* 日期2022年03月13日
+*********************************************************/
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

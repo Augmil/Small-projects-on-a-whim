@@ -1,0 +1,297 @@
+/****************************************************************
+ * 
+ * 音频相关标签样式
+ * 包括 e-audio、e-audio-name、e-audio-author、e-audio-ctrls
+ *
+ ****************************************************************/
+
+e-audio {
+    display: block;
+    background-color: #9bd6f8;
+    box-shadow: 0 0 5px #888;
+    padding: 0.5em;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+e-audio-name {
+    display: inline;
+    font-weight: bold;
+}
+
+e-audio-author {
+    display: inline;
+    font-size: 0.9em;
+}
+
+e-audio-author::before {
+    content: " - ";
+}
+
+e-audio-ctrls {
+    display: block;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: center;
+    padding: 5px;
+    line-height: 40%;
+}
+
+e-audio-ctrls svg {
+    width: 15%;
+    margin: 2% auto;
+}
+
+e-audio-ctrls svg:hover {
+    box-shadow: 0px 0px 2px #888;
+    background-color: rgba(136, 136, 136, 0.5);
+}
+
+#e_audio_ctrl_pause {
+    display: none;
+}
+
+e-audio-ctrls input[type="range"] {
+    /*去除默认样式*/
+    appearance: none;
+    -webkit-appearance: none;
+    height: 8px;
+    width: calc(100% - 10px);
+    border-radius: 2px;
+    box-shadow: 0 0 2px #888;
+    transition: 0.5s;
+    background-color: #ebeff4;
+    background-image: linear-gradient(to right, #6bbae7 0%, #ebeff4 1%);
+}
+
+e-audio-ctrls input[type="range"]::-webkit-slider-thumb {
+    /*去除默认样式*/
+    appearance: none;
+    border-radius: 50%;
+    transition: 0.5s;
+    height: 10px;
+    width: 10px;
+    background: white;
+    border: 2px solid #3e9acf;
+    box-shadow: 0px;
+}
+
+e-audio-ctrls input[type="range"]:hover::-webkit-slider-thumb {
+    height: 12px;
+    width: 12px;
+    background: white;
+    border: 2px solid #3ca7e9;
+    box-shadow: 0px 0px 2px 8px rgba(0, 110, 179, 0.8);
+}
+
+e-audio-ctrls input[type="range"]:hover::-webkit-slider-runnable-track {
+    background-image: linear-gradient(to right, #367397, #ebeff4);
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+
+/****************************************************************
+ * 
+ * 相册相关标签样式
+ * 包括 e-audio、e-audio-name、e-audio-author、e-audio-ctrls
+ *
+ ****************************************************************/
+
+e-album {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 0.5em;
+    position: relative;
+    margin: 2em 0;
+    max-width: 1000px;
+}
+
+e-album::after,
+e-album::before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border: solid rgb(49, 49, 185);
+    border-width: 0 0.5em 0.5em 0;
+    padding: 0.5em;
+}
+
+e-album::after {
+    transform: rotate(0deg);
+    right: -0.25em;
+    bottom: -0.25em;
+}
+
+e-album::before {
+    transform: rotate(180deg);
+    left: -0.25em;
+    top: -0.25em;
+}
+
+e-album img {
+    height: 200px;
+    margin: 3px;
+}
+
+.e-album_win_cover {
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.e-album_big_img {
+    display: block;
+    margin: 40vh auto;
+    max-height: 90vh;
+    transform: translateY(-50%);
+    cursor: zoom-out;
+}
+
+.e-album_cover_close {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    width: 3em;
+    height: 3em;
+    opacity: 0.3;
+}
+
+.e-album_cover_close:before,
+.e-album_cover_close:after {
+    position: absolute;
+    left: 1.3em;
+    content: ' ';
+    height: 3em;
+    width: 0.4em;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.e-album_cover_close:before {
+    transform: rotate(45deg);
+}
+
+.e-album_cover_close:after {
+    transform: rotate(-45deg);
+}
+
+.e-album_cover_close:hover {
+    opacity: 1;
+}
+
+
+/*箭头向左*/
+
+.e-album_to_left {
+    position: absolute;
+    left: 4em;
+    top: 40vh;
+    border: solid white;
+    border-width: 0 0.5em 0.5em 0;
+    display: block;
+    padding: 1em;
+    border-radius: 5px;
+    transform: rotate(135deg);
+    opacity: 0.3;
+}
+
+
+/*箭头向右*/
+
+.e-album_to_right {
+    position: absolute;
+    right: 4em;
+    top: 40vh;
+    border: solid #ccc;
+    border-width: 0 0.5em 0.5em 0;
+    display: block;
+    padding: 1em;
+    border-radius: 5px;
+    transform: rotate(-45deg);
+    opacity: 0.3;
+}
+
+.e-album_to_left:hover,
+.e-album_to_right:hover {
+    opacity: 1;
+    padding: 1.2em;
+}
+
+.e-album_thumbnail_warp {
+    position: absolute;
+    left: 0;
+    bottom: 2vh;
+    height: 13vh;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, .9);
+    padding: 0.5em 2em;
+    box-shadow: 0px 0px 5px white;
+}
+
+.e-album_thumbnail_warp img {
+    display: inline-block;
+    height: 10vh;
+    min-width: 5vh;
+    max-width: 15vh;
+    border-radius: 3px;
+    cursor: zoom-in;
+    margin: 2.5vh 10px;
+}
+
+.e-album_thumbnail_current {
+    transform: scale(1.3);
+    margin-top: 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+.e-album_thumbnail_warp img:hover {
+    transform: scale(1.1);
+    margin-top: 0;
+}
+
+e-album e-title {
+    display: block;
+    font-size: 1.2em;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    font-weight: bold;
+}
+
+e-album e-des {
+    display: block;
+    padding: 0.5em;
+    text-indent: 2em;
+}
+
+e-album e-tag {
+    display: inline;
+    cursor: pointer;
+}
+
+e-album e-tag:hover {
+    color: rgb(5, 99, 161);
+}
+
+e-album e-tag::before {
+    content: '※';
+    display: inline-block;
+    margin-right: 0.5em;
+    margin: 0.5em;
+}
+
+e-album img {
+    height: 200px;
+}
+
+
+/*
