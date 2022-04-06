@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortcutKey</title>
+</head>
+
+<body>
+    <script src="../script/ShortcutKey.js"></script>
+    <script>
+        let SK = new ShortcutKey();
+        SK.register('Ctrl + B', console.log);
+
+        SK.register('Ctrl + P', e => {
+            alert('Ctrl + P')
+        });
+        SK.register('Ctrl + Shift + P', e => {
+            alert('Ctrl + Shift + P')
+        });
+        SK.register('Ctrl + Alt + Shift + P', e => {
+            alert('Ctrl + Alt + Shift + P')
+        });
+        SK.refresh();
+        document.write(`
+    注册了几个快捷键，不妨尝试一下，
+    'Ctrl + P'、'Ctrl + Shift + P'、'Ctrl + Alt + Shift + P',
+    <br/>
+    或者打开控制台按下 'Ctrl + Alt + Shift + H' 查看帮助文档`)
+    </script>
+</body>
+
+</html>

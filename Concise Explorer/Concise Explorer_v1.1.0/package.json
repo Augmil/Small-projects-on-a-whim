@@ -1,0 +1,11 @@
+{
+  "name": "concise-explorer_v1.1.0",
+  "version": "1.1.0",
+  "description": "资源素材管理器，更新版本",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Augmil",
+  "license": "ISC"
+}

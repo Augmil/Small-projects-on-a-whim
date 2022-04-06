@@ -1,0 +1,108 @@
+.tree_view {
+    padding: 0.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--title-color);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.tree_view li {
+    white-space: nowrap;
+    list-style: none;
+}
+
+.tree_view table {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.tree_view ul {
+    list-style: none;
+    user-select: none;
+    padding: 0px 0px 0px 18px;
+    font-size: 13px;
+    line-height: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tree_view ul::after {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 0px;
+    border-left: 0px;
+    /*border-bottom: 1px wheat dashed;*/
+    transition: 0.5s;
+}
+
+.tree_view ul:hover::after {
+    height: calc(100% - 16px);
+    border-left: 1px wheat dashed;
+    border-bottom: 1px wheat dashed;
+}
+
+.tree_view span {
+    transition: 0.35s;
+}
+
+
+/*折叠状态*/
+
+.tree_view span:first-child[fold] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../res/bullet-chevron.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tree_view span:first-child[fold]~ul {
+    height: 0;
+}
+
+.tree_view span:first-child[unfold]~ul {
+    height: auto;
+}
+
+
+/*展开状态*/
+
+.tree_view span:first-child[unfold] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../res/bullet-chevron.svg);
+    transform: rotate(90deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*默认状态 -- 无内容*/
+
+.tree_view span:first-child {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../res/bullet-dotted.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tree_view span:nth-child(2) {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    /*默认图标*/
+    background-image: url(../res/default_folder_opened.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

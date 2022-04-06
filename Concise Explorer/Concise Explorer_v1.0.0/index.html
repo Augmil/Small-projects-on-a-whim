@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello World!</title>
+    <!--link rel="icon" href="./res/icon.png" type="image/x-icon" /-->
+    <link rel="stylesheet" href="style/basic.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/tree_view.css">
+</head>
+
+<body>
+    <header>
+        <span class="header_icon"></span>
+        <span class="header_title">Concise Explorer_v1.0.0</span>
+        <div class="header_ctrl_warp">
+            <a id="win_min"><span title="最小化"></span></a>
+            <a id="win_restore"><span title="向下还原"></span></a>
+            <a id="win_max"><span title="最大化"></span></a>
+            <a id="win_close"><span title="关闭"></span></a>
+        </div>
+    </header>
+    <div class="body">
+        <!--div class="menu">
+            <span>文件</span>
+            <span>编辑</span>
+            <span>选择</span>
+            <span>查看</span>
+            <span>转到</span>
+        </div-->
+        <div class="content">
+            <div class="aside_left">
+                <div class=""></div>
+                <div class="tree_view">
+                    <!--span unfold id="test"></span>
+                    <span></span>
+                    <table>根目录</table>
+                    <ul>
+                        <li>
+                            <span></span>
+                            <span></span>
+                            <table>一级文件夹</table>
+                        </li>
+                        <li>
+                            <span unfold></span>
+                            <span></span>
+                            <table>一级文件夹</table>
+                            <ul>
+                                <li>
+                                    <span unfold></span>
+                                    <span></span>
+                                    <table>二级文件夹</table>
+                                </li>
+                                <li>
+                                    <span></span>
+                                    <span></span>
+                                    <table>二级文件夹</table>
+                                </li>
+                                <li>
+                                    <span fold></span>
+                                    <span></span>
+                                    <table>一级文件夹</table>
+                                    <ul>
+                                        <li>
+                                            <span unfold></span>
+                                            <span></span>
+                                            <table>二级文件夹</table>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <span></span>
+                                            <table>二级文件夹</table>
+                                        </li>
+                                        <li>
+                                            <span fold></span>
+                                            <span></span>
+                                            <table>一级文件夹</table>
+                                            <ul>
+                                                <li>
+                                                    <span unfold></span>
+                                                    <span></span>
+                                                    <table>二级文件夹</table>
+                                                </li>
+                                                <li>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <table>二级文件夹</table>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span></span>
+                            <span></span>
+                            <table>一级文件夹</table>
+                        </li>
+                        <li>
+                            <span></span>
+                            <span></span>
+                            <table>一级文件夹</table>
+                        </li>
+                    </ul-->
+                </div>
+            </div>
+            <div class="horizontal_separation_line" id="resize_asideLeft_main"></div>
+            <div class="main">
+                <div class="tool">
+                    <div class="direction_control">
+                        <span id="history_forward" disable></span>
+                        <span id="history_backward"></span>
+                    </div>
+                    <div class="optional_operation">
+                        <div class="show_current_path">
+                            <span>根目录</span>
+                            <span>一级目录</span>
+                            <span>二级目录</span>
+                            <span>最后一个</span>
+                            <span search>熊猫</span>
+                        </div>
+                        <input class="input_search_path" id="input_search_path" type="search" value="gregergret"></input>
+                    </div>
+                    <div class="operation_button">
+                        <span id="search_button"></span>
+                        <span id="filter_button" disable></span>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal_separation_line" id="resize_main_asideRight"></div>
+            <div class="aside_right"></div>
+
+
+
+
+        </div>
+        <div class="footer"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script/index.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

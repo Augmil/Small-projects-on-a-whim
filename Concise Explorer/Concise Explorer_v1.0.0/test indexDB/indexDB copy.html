@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var request = indexedDB.open('sql', 2);
+        request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("customers", {
+                keyPath: "ssn"
+            });
+
+            objectStore.transaction.oncomplete = function(event) {
+                var customerObjectStore = db.transaction("customers", "readwrite")
+                    .objectStore("customers")
+                    .add({
+                        id: "555-55-5555",
+                        name: "Donna",
+                        age: 32,
+                        email: "donna@home.org"
+                    });
+
+            };
+        };
+
+        let db;
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            console.log(db, event);
+        }
+    </script>
+</body>
+
+</html>

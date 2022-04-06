@@ -1,0 +1,122 @@
+/******************************************************************
+ * @doc 右键菜单样式
+ * @version 1.1.0
+ * @description 配合 自制的 ContentMenu.js 使用
+ * @author Augmil 2022/03/24
+ *****************************************************************/
+
+.menu_box {
+    z-index: 99999;
+    width: 250px;
+    border-radius: 2px;
+    color: #9ca6a6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    background-color: aqua;
+}
+
+.menu_box ul {
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 5px;
+    border-radius: 2px;
+    background-color: #252526;
+    box-shadow: 0 0 2px rgba(131, 128, 124, 0.418);
+}
+
+.menu_box li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+}
+
+.menu_box[data-pos="left"] li ul {
+    left: -100%;
+}
+
+.menu_box ul li:hover>ul,
+.menu_box ul li>ul:hover {
+    display: block;
+}
+
+.menu_box ul li {
+    list-style: none;
+    width: 100%;
+    position: relative;
+}
+
+.menu_box hr {
+    margin: 5px 0;
+    height: 0;
+    border-bottom: 1px solid rgb(131, 126, 126);
+    border-top: none;
+}
+
+.menu_box li div {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    position: relative;
+}
+
+.menu_box li div:hover {
+    background-color: #094771;
+}
+
+.menu_box li div a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    display: inline-block;
+}
+
+.menu_box li div[data-shortcut] a {
+    width: 50%;
+}
+
+.menu_box li div[data-group]::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-image: url(./img/bullet-chevron-right.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+}
+
+.menu_box li div[data-shortcut]::after {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    content: attr(data-shortcut);
+    text-align: right;
+    width: 40%;
+    height: 100%;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.menu_box li div i {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 8px 0 2px;
+    position: relative;
+    bottom: 6px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

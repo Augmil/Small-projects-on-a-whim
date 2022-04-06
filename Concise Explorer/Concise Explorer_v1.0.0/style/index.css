@@ -1,0 +1,280 @@
+/*******************************************************
+ * 颜色库
+ *******************************************************/
+
+ :root {
+    --aside-bg: #1f202d;
+}
+
+
+/*******************************************************
+ * 美化滚动条
+ *******************************************************/
+
+ ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    transition: background-color 1s;
+    background-color: #1e1e1e00;
+}
+
+*:hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    transition: opacity 1s;
+    background-color: #1e1e1e;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, 0);
+    background-clip: padding-box;
+    border-radius: 2px;
+    transition: 1s;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, .3);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144, 147, 153, .5);
+}
+
+
+/************************************************
+ * .horizontal_separation_line 分割线基本样式
+.resize {
+ ************************************************/
+
+.horizontal_separation_line {
+    height: 100%;
+    float: left;
+    background-color: #4a4d5f;
+    width: 2px;
+    cursor: w-resize;
+}
+
+.horizontal_separation_line:hover {
+    transform: scaleX(3);
+    background-color: #4a4d5f;
+}
+
+
+/*******************************************************
+ * 基本框架
+ *******************************************************/
+
+ :root {
+    user-select: none;
+}
+
+.content {
+    height: calc(100% - 65px);
+    background-color: brown;
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    height: 35px;
+    background-color: #007acc;
+}
+
+
+/************************************************
+ * .content 内容区域基本布局
+ ************************************************/
+
+.aside_left,
+.main,
+.aside_right {
+    height: 100%;
+    float: left;
+}
+
+.aside_left {
+    background-color: var(--aside-bg);
+    width: 20%;
+}
+
+.main {
+    background-color: var(--body-bg);
+    width: calc(60% - 4px);
+}
+
+.aside_right {
+    background-color: var(--aside-bg);
+    width: 20%;
+}
+
+
+/************************************************
+ * .main 主内容区域基本布局
+ ************************************************/
+
+.tool {
+    width: 100%;
+    height: 35px;
+    background-color: #3b3d49;
+    line-height: 35px;
+}
+
+
+/************************************************
+ * .tool 工具区域基本布局
+ ************************************************/
+
+.direction_control,
+.optional_operation,
+.operation_button {
+    float: left;
+    height: 100%;
+}
+
+.direction_control,
+.operation_button {
+    width: 60px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.optional_operation {
+    width: calc(100% - 120px);
+    min-width: 200px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 2px 10px;
+    position: relative;
+}
+
+
+/*方向控件样式*/
+
+.direction_control span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #484848;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2px;
+    position: relative;
+    top: 0.1em;
+}
+
+#history_forward,
+#history_backward {}
+
+#history_forward {
+    background-image: url(../res/bullet-chevron.svg);
+    transform: rotate(180deg);
+}
+
+#history_backward {
+    background-image: url(../res/bullet-chevron.svg);
+}
+
+
+/*可选功能区样式*/
+
+.show_current_path,
+.input_search_path {
+    position: absolute;
+    right: 0;
+}
+
+.show_current_path {
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    top: 0;
+}
+
+.show_current_path span {
+    display: inline-block;
+    padding-right: 5px;
+    border-radius: 3px;
+    line-height: 150%;
+}
+
+.show_current_path span:hover {
+    background-color: #323233;
+}
+
+.show_current_path span::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(../res/bullet-chevron.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2px;
+}
+
+.show_current_path span[search]::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(../res/zoom-in.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2px;
+}
+
+.input_search_path {
+    top: 10%;
+    height: 80%;
+    border: none;
+    outline: none;
+    color: var(--title-color);
+    border-radius: 10px;
+    background-color: #1f202d;
+    max-width: 300px;
+    transition: 0.5s;
+    /*min-width: 200px;
+    padding: 0 1em;*/
+    padding: 0;
+    width: 0;
+}
+
+.input_search_path:valid {}
+
+.input_search_path:focus {}
+
+#search_button:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.input_search_path[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: url(https://yxs-web.oss-cn-beijing.aliyuncs.com/328e4d97f9d0d68ea04e872f68e508e3.png) no-repeat;
+    background-size: contain;
+}
+
+
+/*操作按键区域样式*/
+
+.operation_button span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2px;
+    position: relative;
+    top: 0.1em;
+}
+
+#filter_button {
+    background-image: url(../res/filter.svg);
+}
+
+#search_button {
+    background-image: url(../res/search.svg);
+}

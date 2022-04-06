@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello World!</title>
+    <!--link rel="icon" href="./res/icon.png" type="image/x-icon" /-->
+    <link rel="stylesheet" href="style/FloatWindow.css">
+    <link rel="stylesheet" href="style/TreeView.css">
+    <link rel="stylesheet" href="style/basic.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/ContentMenu.css">
+</head>
+
+<body>
+    <header>
+        <a class="header_icon"></a>
+        <a class="header_title">Concise Explorer_v1.0.0</a>
+
+        <div class="header_ctrl_warp">
+            <a id="win_min"><i title="最小化"></i></a>
+            <a id="win_restore"><i title="向下还原"></i></a>
+            <a id="win_max"><i title="最大化"></i></a>
+            <a id="win_close"><i title="关闭"></i></a>
+        </div>
+        <div class="header_menu_warp">
+            <div id="main_menu_but">
+                <i></i>
+                <div id="main_menu_box"></div>
+            </div>
+            <div id="settings_but"><i></i></div>
+        </div>
+    </header>
+
+
+    <div class="body">
+        <div class="content">
+            <div class="aside_left">
+                <div class="library_info">
+                    <a>测试文件夹根目录</a>
+                </div>
+                <div class="default_group">
+                    <div id="group_all_file" data-number="10908">
+                        <i></i><a>全部</a>
+                    </div>
+                    <div id="group_unclassified" data-number="0">
+                        <i></i><a>未分类</a>
+                    </div>
+                    <div id="group_no_label" data-number="9791">
+                        <i></i><a>无标签</a>
+                    </div>
+                    <div id="group_all_label" data-number="112">
+                        <i></i><a>标签管理</a>
+                    </div>
+                    <div id="group_recycle_bin" data-number="1138">
+                        <i></i><a>回收站</a>
+                    </div>
+                </div>
+                <div class="tree_view"></div>
+            </div>
+            <div class="horizontal_separation_line" id="resize_asideLeft_main"></div>
+            <div class="main">
+                <div class="tool">
+                    <div class="direction_control">
+                        <i id="history_forward" disable></i>
+                        <i id="history_backward"></i>
+                    </div>
+                    <div class="optional_operation">
+                        <div class="show_current_path">
+                            <a><i></i>根目录</a>
+                            <a><i></i>一级目录</a>
+                            <a><i></i>二级目录</a>
+                            <a><i></i>最后一个</a>
+                            <a><i search></i>搜索熊猫</a>
+                        </div>
+                        <input class="input_search_path" id="input_search_path" type="search" value="gregergret"></input>
+                    </div>
+                    <div class="operation_button">
+                        <i id="search_button"></i>
+                        <i id="filter_button" disable></i>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal_separation_line" id="resize_main_asideRight"></div>
+            <div class="aside_right"></div>
+
+
+
+
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <script src="script/ShortcutKey.js"></script>
+    <script>
+        // 实例化快捷键
+        let SK = new ShortcutKey();
+        // 注册快捷键
+        SK.register('Ctrl + B', console.log);
+        // 刷新快捷键 --> 注册完所有快捷键后刷新一次即可
+        SK.refresh();
+    </script>
+    <script src="script/FloatWindow.js"></script>
+    <script src="script/ContentMenu.js"></script>
+    <script src="script/TreeView.js"></script>
+    <script src="renderer.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>

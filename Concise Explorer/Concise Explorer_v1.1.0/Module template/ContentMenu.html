@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterContentMenu.js</title>
+    <link rel="stylesheet" href="../style/ContentMenu.css">
+    <style>
+        html,
+        body {
+            background-color: #1e1e1e;
+            height: 100vh;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<div id="ContentMenu" style="background-color: #1e1e1e;width: 100vw;height: 100vh;z-index: 99;position: fixed; top: 0vh;left: 0vw;"></div>
+
+<body>
+    <script src="../script/ContentMenu.js"></script>
+    <script>
+        let menuTem = [{
+            label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+            icon: '../res/compatible_edge.png',
+            shortcut: 'ctrl+j',
+            type: 'item',
+            method: (e) => {
+                console.log('默认菜单事件', e);
+            },
+        }, {
+            label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+            shortcut: 'ctrl+j',
+            type: 'item',
+        }, {
+            label: '乐库',
+            icon: '../res/compatible_edge.png',
+            shortcut: 'ctrl+j',
+            type: 'group',
+            submenu: [{
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, {
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, ]
+        }, {
+            type: 'separator'
+        }, {
+            label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+            icon: '../res/compatible_edge.png',
+            shortcut: 'ctrl+j',
+            type: 'group',
+            submenu: [{
+                label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, {
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, ]
+        }, {
+            label: '乐库',
+            icon: '../res/compatible_edge.png',
+            shortcut: 'ctrl+j',
+            type: 'group',
+            submenu: [{
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, {
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'group',
+                submenu: [{
+                    label: '乐库',
+                    icon: '../res/compatible_edge.png',
+                    shortcut: 'ctrl+j',
+                    type: 'item',
+                    method: (e) => {
+                        console.log('默认菜单事件', e);
+                    },
+                }, {
+                    type: 'separator'
+                }, {
+                    label: '乐库',
+                    icon: '../res/compatible_edge.png',
+                    shortcut: 'ctrl+j',
+                    type: 'item',
+                    method: (e) => {
+                        console.log('默认菜单事件', e);
+                    },
+                }, {
+                    type: 'separator'
+                }, ]
+            }, {
+                type: 'separator'
+            }, {
+                label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'group',
+                submenu: [{
+                    label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+                    icon: '../res/compatible_edge.png',
+                    shortcut: 'ctrl+j',
+                    type: 'item',
+                    method: (e) => {
+                        console.log('默认菜单事件', e);
+                    },
+                }, {
+                    type: 'separator'
+                }, {
+                    label: '乐库',
+                    icon: '../res/compatible_edge.png',
+                    shortcut: 'ctrl+j',
+                    type: 'item',
+                    method: (e) => {
+                        console.log('默认菜单事件', e);
+                    },
+                }, {
+                    type: 'separator'
+                }, ]
+            }, {
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, ]
+        }, {
+            type: 'separator'
+        }, {
+            label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+            icon: '../res/compatible_edge.png',
+            shortcut: 'ctrl+j',
+            type: 'group',
+            submenu: [{
+                label: '网红歌曲网红歌曲网红歌曲网红歌曲网红歌曲',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, {
+                label: '乐库',
+                icon: '../res/compatible_edge.png',
+                shortcut: 'ctrl+j',
+                type: 'item',
+                method: (e) => {
+                    console.log('默认菜单事件', e);
+                },
+            }, {
+                type: 'separator'
+            }, ]
+        }, ];
+
+        // 实例化菜单
+        let CM = new ContentMenu();
+        // 为目标元素添加右键菜单
+        let target = document.getElementById('ContentMenu');
+        CM.register(target, menuTem);
+    </script>
+</body>
+
+</html>

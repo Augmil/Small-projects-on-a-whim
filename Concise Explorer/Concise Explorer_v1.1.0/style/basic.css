@@ -1,0 +1,162 @@
+/*******************************************************
+ * 美化滚动条
+ *******************************************************/
+
+ ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    transition: background-color 1s;
+    background-color: #1e1e1e00;
+}
+
+*:hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    transition: opacity 1s;
+    background-color: #1e1e1e;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, 0);
+    background-clip: padding-box;
+    border-radius: 2px;
+    transition: 1s;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, .3);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144, 147, 153, .5);
+}
+
+
+/*******************************************************
+ * 窗口基本布局
+ *******************************************************/
+
+:root {
+    --header-bg: #333646;
+    --body-bg: #262735;
+    --title-color: #e0e7fa;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-bg);
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 100%;
+    align-items: center;
+    /*设置为electron标题部分 拖动移动窗口*/
+    -webkit-app-region: drag;
+    background-color: var(--header-bg);
+    user-select: none;
+    z-index: 999;
+}
+
+header * {
+    /*屏蔽子元素的拖动移动窗口效果*/
+    -webkit-app-region: no-drag;
+}
+
+.body {
+    position: fixed;
+    top: 35px;
+    left: 0;
+    height: calc(100% - 0px);
+    width: 100%;
+    background-color: var(--body-bg);
+    z-index: 0;
+}
+
+
+/*******************************************************
+ * 标题栏
+ *******************************************************/
+
+.header_icon {
+    float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 2.5px 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(..//res/Electron_319445171.png);
+}
+
+.header_title {
+    line-height: 35px;
+    color: var(--title-color);
+    float: left;
+}
+
+.header_ctrl_warp {
+    float: right;
+}
+
+.header_ctrl_warp a {
+    display: block;
+    float: left;
+    width: 45px;
+    height: 35px;
+}
+
+.header_ctrl_warp a:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+.header_ctrl_warp a:hover:last-child {
+    background-color: rgb(215, 21, 38);
+}
+
+.header_ctrl_warp a i {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 9px auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#win_min i {
+    background-image: url(./img/min.svg);
+}
+
+#win_restore {
+    display: none;
+}
+
+#win_restore i {
+    background-image: url(./img/restore.svg);
+}
+
+#win_max {
+    display: block;
+}
+
+#win_max i {
+    background-image: url(./img/max.svg);
+}
+
+#win_close i {
+    background-image: url(./img/close.svg);
+}

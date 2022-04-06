@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeViewTem</title>
+    <link rel="stylesheet" href="../style/TreeView.css">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        
+        .tree_view {
+            max-width: 300px;
+            height: 100%;
+            background-color: rgb(26, 26, 26);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tree_view"></div>
+    <script src="../script/TreeView.js"></script>
+    <script>
+        let tree = {
+            name: '这是根目录',
+            icon: '../res/default_folder_opened.svg',
+            state: 'unfold',
+            subfolder: [{
+                name: '这是一级目录',
+                icon: '../res/default_folder_opened.svg',
+                state: 'unfold',
+                subfolder: [{
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'unfold',
+                    subfolder: [{
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, ]
+                }, ]
+            }, {
+                name: '这是一级目录',
+                icon: '../res/default_folder_opened.svg',
+                state: 'unfold',
+                subfolder: [{
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'unfold',
+                    subfolder: [{
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, {
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, ]
+                }, {
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'empty',
+                    subfolder: []
+                }, {
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'empty',
+                    subfolder: []
+                }, {
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'unfold',
+                    subfolder: [{
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, {
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, {
+                        name: '这是三级目录',
+                        icon: '../res/default_folder_opened.svg',
+                        state: 'empty',
+                        subfolder: []
+                    }, ],
+                }, ]
+            }, {
+                name: '这是一级目录',
+                icon: '../res/default_folder_opened.svg',
+                state: 'unfold',
+                subfolder: [{
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'empty',
+                    subfolder: []
+                }, {
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'empty',
+                    subfolder: []
+                }, {
+                    name: '这是二级目录',
+                    icon: '../res/default_folder_opened.svg',
+                    state: 'empty',
+                    subfolder: []
+                }, ]
+            }]
+        }
+        let eTVBox = document.getElementsByClassName('tree_view')[0];
+        showTreeView(tree, eTVBox, console.log);
+    </script>
+</body>
+
+</html>
