@@ -1,0 +1,133 @@
+/**/
+
+:root {
+    --file-view-bg: #252526;
+    --file-view-color: #b8b8b8;
+    --open-bg-color: #5c5c6855;
+    --hover-bg-color: #55555f;
+    --open-file-marker: url(img/max.svg);
+    --open-close-marker: url(img/min.svg);
+    --folder-fold-marker: url(img/marker-fold.svg);
+}
+
+.file_view {
+    color: var(--file-view-color);
+    width: 100%;
+    height: 100%;
+    background-color: var(--file-view-bg);
+    padding: 8px 0 8px 8px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.file_view ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.file_view ul li ul {
+    display: none;
+}
+
+.file_view ul li {
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 8px);
+}
+
+.file_view>ul>li ul li {
+    margin-left: 8px;
+}
+
+.file_view ul li div {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+/*项目标记*/
+
+.file_view ul li div::before {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+
+/*文件夹 是否折叠*/
+
+.file_view ul li div[data-type="folder"][data-fold="true"]::before {
+    background-image: var(--folder-fold-marker);
+}
+
+.file_view ul li div[data-type="folder"][data-fold="false"]::before {
+    background-image: var(--folder-fold-marker);
+    transform: rotate(90deg);
+}
+
+.file_view ul li div[data-type="folder"][data-fold="false"]+ul {
+    display: block;
+}
+
+
+/* 文件/文件夹 是否打开 */
+
+.file_view ul li div[data-type="file"][data-open="true"],
+.file_view ul li div[data-type="folder"][data-open="true"] {
+    background-color: var(--open-bg-color);
+}
+
+.file_view ul li div[data-type="file"][data-open="true"]::before {
+    background-image: var(--open-file-marker)
+}
+
+.file_view ul li div[data-type="file"][data-open="false"]::before {
+    background-image: var(--open-close-marker)
+}
+
+
+/*鼠标悬浮*/
+
+.file_view ul li div:hover {
+    background-color: var(--hover-bg-color)!important;
+}
+
+
+/*文件图标*/
+
+.file_view ul li div>i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(img/default-folder.svg);
+    position: relative;
+    top: 4px;
+    margin: 0 5px;
+}
+
+
+/*子文件数量*/
+
+.file_view ul li div[data-number]::after {
+    display: block;
+    content: attr(data-number);
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    max-width: 50px;
+    height: 100%;
+}
