@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>播放VIP视频</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="favicon.png" class="logo">
+            <strong class="title">播放VIP视频</strong>
+        </div>
+        <div class="web_info">
+            <img src="https://www.kpezp.cn/favicon.ico" id="web_icon">
+            <span id="web_title">斗破苍穹三年苍穹三年之预之预 第二…</span>
+            <button id="play">播放</button>
+        </div>
+        <div>
+            <textarea id="web_url"></textarea>
+        </div>
+        <div class="opt_warp">
+            <!--class="opt_cur"-->
+            <div id="opt_sel_api">选择</div>
+            <div id="opt_man_api">添加</div>
+            <div id="opt_dev_too">工具</div>
+        </div>
+        <div class="box">
+            <div class="api_ul">
+                <!--div class="api_li">
+                    <input type="radio" name="api" id="" value="1">
+                    <div class="api_name">斗破苍穹三年苍穹三年之预之预</div>
+                    <div class="api_meth">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="api_li">
+                    <input type="radio" name="api" id="" value="3" checked>
+                    <div class="api_name">斗破苍穹三年苍穹三年之预之预</div>
+                    <div class="api_meth">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div-->
+            </div>
+
+            <div class="man_api">
+                <label for="new_api_name">接口名称:</label>
+                <input type="text" name="new_api_name" id="new_api_name">
+                <label for="new_api_url">接口地址:</label>
+                <input type="text" name="new_api_url" id="new_api_url">
+                <div class="new_but_warp">
+                    <button id="new_true">添加</button>
+                    <button id="new_false">取消</button>
+                </div>
+            </div>
+
+            <div class="dev_too">
+                <button id="too_reset" title="恢复api和设置为默认值">重置</button>
+                <button id="too_export" title="将api和配置信息">导出</button>
+                <button id="too_dev" title="打开开发者工具">调试</button>
+            </div>
+        </div>
+    </div>
+    <script src="script/PlayVIP.js"></script>
+</body>
+
+</html>

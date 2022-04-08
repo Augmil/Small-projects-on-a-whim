@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Play VIP",
+    "description": "调用VIP视频解析接口播放视频",
+    "version": "1.0.0",
+    "icons": {
+        "128": "favicon.png"
+    },
+    "permissions": [
+        "tabs", "http://*/*", "https://*/*"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "favicon.png",
+        "default_title": "播放VIP视频"
+    }
+}
