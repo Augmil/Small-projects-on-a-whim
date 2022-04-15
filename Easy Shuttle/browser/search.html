@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Shuttle</title>
+    <link rel="stylesheet" href="./style/default theme light/search.css" type="text/css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="bg_top"></div>
+        <div class="bg_middle"></div>
+        <div class="bg_left"></div>
+        <div class="bg_right"></div>
+        <div class="content_warp">
+            <div class="content_title">
+                <div class="window_control">
+                    <div class="win_close" title="关闭"><span></span></div>
+                    <div class="win_minimize" title="最小化"><span></span></div>
+                </div>
+            </div>
+            <div class="search_warp">
+                <div class="search_box_warp">
+                    <input class="search_box" id="seaBox" placeholder="键入你想搜索的内容" value="" />
+                    <div class="sea_ico_warp">
+                        <span class="sea_ico sea_ico_del" id="seaButDel" title="清空内容"></span>
+                        <span class="sea_ico sea_ico_sea" id="seaButSea" title="点击搜索"></span>
+                        <span class="sea_ico sea_ico_more" id="seaButSea" title="更多功能"></span>
+                    </div>
+                    <div class="search_menu"></div>
+                </div>
+                <div class="tool_box">
+                </div>
+                <!-- #down_warp_box 中的内容动态生成 -->
+                <div class="sea_drop" id="down_warp_box">
+                    <!-- style1 -->
+                    <div class="drop_item_s1">
+                        <span class="item_s1_icon" style="background-image: url(./resources/icon.png);"></span>
+                        <div class="item_s1_info">
+                            <span>百度搜索</span>
+                            <span>网页链接 | www.baidu.com</span>
+                        </div>
+                        <div class="item_s1_action">
+                            <span>点击访问</span>
+                            <span>Alt+1</span>
+                        </div>
+                    </div>
+                    <!-- s2 -->
+                    <div class="drop_item_s2">
+                        <span class="item_s2_icon" style="background-image: url(./resources/icon.png);"></span>
+                        <div class="item_s2_info">
+                            <strong>计算</strong>
+                            <span title="8+9/8+5*6Z=39.125  8+9/8+5*6Z=39.125  8+9/8+5*6Z=39.125"></span>
+                        </div>
+                        <div class="item_s2_action">
+                            <strong>复制结果</strong>
+                            <strong>计算器</strong>
+                        </div>
+                    </div>
+                    <!-- s3/net -->
+                    <div class="drop_item_s3" title="推荐搜索|第三方打撒v">
+                        <span></span>
+                        <i>111111</i>
+                        <span></span>
+                    </div>
+                    <div class="placeholder_test"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bg_bottom"></div>
+    </div>
+
+    <script src="./data/setting.js"></script>
+    <script src="./data/specific.js"></script>
+    <script src="./data/command.js"></script>
+    <script src="./data/smart.js"></script>
+    <script src="./data/network.js"></script>
+    <script src="./script/search.js"></script>
+</body>
+
+</html>
