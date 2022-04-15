@@ -1,0 +1,12 @@
+{
+  "name": "Easy Shuttle",
+  "version": "1.0.0",
+  "description": "一键启动搜索，智能识别文件目录，程序名、网络链接、QQ号、邮箱、电话号码等",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
