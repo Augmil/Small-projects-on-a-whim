@@ -1,0 +1,16 @@
+
+<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.39 145.86">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: red;
+                stroke-miterlimit: 10;
+                stroke-width: 2px;
+            }
+        </style>
+    </defs>
+    <title>轮盘组件外圈_1_8</title>
+    <path class="cls-1" d="M375,0a373.78,373.78,0,0,1-28.46,143.55L207.92,86.13A224.36,224.36,0,0,0,225,0Z"
+        transform="translate(-206.61 1)" />
+</svg>

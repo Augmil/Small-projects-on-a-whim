@@ -1,0 +1,365 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 720px;
+    min-width: 400px;
+    position: relative;
+    background-color: rgba(224, 64, 64, 0);
+}
+
+
+/* 背景样式 *******************************************************************************/
+.bg_top{
+    width: 100%;
+    height: 64px;
+    background-image: url(./resources/上部挂件.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg_middle{
+    position: absolute;
+    top:64px;
+    left: 0px;
+    width: calc(100% - 0px);
+    height: calc(100% - 64px);
+    background-size: cover;
+    /*background-image: url(./resources/背景图.jpg);*/
+    background-repeat: no-repeat;
+}
+
+.bg_left{
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 0px;
+    height: calc(100% - 128px);
+    background-size: cover;
+    background-image: url(./resources/左部挂件.png);
+    background-repeat: no-repeat;
+}
+
+.bg_right{
+    position: absolute;
+    top:64px;
+    right: 0;
+    width: 0px;
+    height: calc(100% - 128px);
+    background-size: cover;
+    background-image: url(./resources/右部挂件.png);
+    background-repeat: no-repeat;
+}
+
+.bg_bottom{
+    width: 100%;
+    height: 0px;
+    background-image: url(./resources/bg_01_bot.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+/* 背景样式 *******************************************************************************/
+
+/* 内容主区域 */
+.search_warp {
+    width: calc(100% - 0px);
+    margin: 0 auto;
+    border-radius: 0.5em;
+    margin: 0px auto;
+    position: relative;
+}
+
+/*搜索框基础样式*/
+/*搜索框默认样式（未键入搜索词时）*/
+
+.search_box{
+    box-sizing: border-box;
+    font-size: 105%;
+    margin: 0 auto;
+    width: 100%;
+    line-height: 1.5em;
+    padding-right: calc((3 * 1.5em) + 1.5em);
+    padding-left: 1em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding: 0 calc((3 * 1.5em) + 1.5em) 0 0.5em;/* 上右下左 */
+}
+
+.search_warp input{
+	border:none;
+    box-sizing: border-box;
+}
+.search_warp input:focus{   
+	border:none;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+.search_box_res{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: none;
+    border-bottom-right-radius: none;
+}
+
+
+
+
+
+
+/*搜索框默认样式（键入搜索词，弹出下拉框框时）*/
+.sea_ico_warp{
+    font-size: 105%;
+    overflow: auto;
+    position: absolute;
+    top: 1em;
+    right: 0.5em;
+}
+
+.sea_ico{
+    margin: 0 0.15em;
+    height: 1.2em;
+    width: 1.2em;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.5;
+}
+
+.sea_ico:hover{
+    opacity: 1;
+}
+
+.sea_ico_del{
+    background-image: url(./resources/svg/x.svg);
+    display: none;
+}
+.sea_ico_sea{
+    background-image: url(./resources/svg/search.svg);
+}
+
+.sea_ico_menu{
+    background-image: url(./resources/svg/chevron-up.svg);
+    transition: 0.5s;
+}
+
+/*下拉内容显示框框基础样式*/
+
+/*隐藏下拉框（未键入搜索词时）*/
+.sea_drop_warp_hide{
+    display: none;
+}
+
+/*显示下拉框（键入搜索词时）*/
+.sea_drop_warp{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    /*border: black 2px solid;*/
+    border-top: none;
+    border-radius: none;
+    max-height: 445px;
+    min-height: 15em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+/* 下拉框中各类型结果显示样式 */
+.sea_drop *{
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.sea_drop>div{
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.sea_drop>div:hover{
+    background-color: rgb(170, 170, 168);
+}
+
+/* 下拉框项目通用样式/s1 */
+.drop_item_s1{
+    height: 3em;
+    padding: 0.25em 0em;
+}
+
+
+.item_s1_icon{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background-image: url(./resources/icon.png)*/
+    float: left;
+    display: block;
+    height: 2.25em;
+    width: 2.25em;
+    margin: 0 0.5em;
+}
+
+.item_s1_info{
+    float: left;
+    width: calc(75% - 2em);
+}
+
+.item_s1_info>span:first-child{
+    display: block;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.item_s1_info>span:last-child{
+    display: block;
+    font-weight: lighter;
+    font-size: 90%;
+}
+
+.item_s1_action{
+    float: right;
+    width: calc(25% - 2em);
+}
+
+.item_s1_action>span:first-child{
+    display: block;
+    font-weight: bold;
+    font-size: 90%;
+    text-align: right;
+    margin-right: 1em;
+}
+
+.item_s1_action>span:last-child{
+    display: block;
+    font-weight: lighter;
+    font-size: 80%;
+    text-align: right;
+    margin-right: 1em;
+}
+
+
+/* 下拉框项目 s2/command */
+.drop_item_s2{
+    height: auto;
+    padding: 0.25em 0em;
+}
+
+.item_s2_icon{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background-image: url(./resources/icon.png)*/
+    float: left;
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0 0.5em 0 0.75em;
+}
+
+.item_s2_info{
+    float: left;
+    width: calc(65% - 2em);
+    line-height: 1.5em;
+}
+
+.item_s2_info strong::after{
+    content: ' > ';
+}
+
+.item_s2_info span::after{
+    content: attr(title);
+    font-size: 90%;
+}
+
+.item_s2_action{
+    float: right;
+    width: calc(35% - 2em);
+    line-height: 1.5em;
+    text-align: right;
+    margin-right: 1em;
+    font-size: 90%;
+}
+
+.item_s2_action>strong{
+    position: relative;
+    cursor:pointer;
+}
+.item_s2_action>strong::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -0.1em;
+    right: 0.5em;
+    border-top: 2px dashed black;
+}
+.item_s2_action>strong::after{
+    content: ' ';
+}
+
+/* 下拉框项目 s3/network */
+.drop_item_s3{
+    height: none;
+    padding: 0.25em 0em;
+}
+
+
+.drop_item_s3>span{
+    height: 1em;
+    width: 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.drop_item_s3>span:first-child{
+    background-image: url(./resources/svg/search.svg);
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.drop_item_s3>span:last-child{
+    background-image: url(./resources/svg/arrow-up-right.svg);
+    display: block;
+    float: right;
+    margin-right: 1em;
+}
+
+
+/* 下拉框项目 s4/ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
