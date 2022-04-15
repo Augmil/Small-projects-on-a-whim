@@ -1,0 +1,99 @@
+{
+    "inputText": "输入的文本",
+    "nodeElement": "将生成的内容添加到这里",
+    "outStyle": {},
+    "typeBase": {
+        "specific": [
+            {
+                "name": "isUrl",
+                "value": "链接",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isEmail",
+                "value": "邮箱",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isPhoneNumber",
+                "value": "手机或电话号码",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isFilePath",
+                "value": "文件路径",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isIdCard",
+                "value": "身份证号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isGATIdCard",
+                "value": "港、澳、台身份证号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isQQ",
+                "value": "QQ账号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isWeChat",
+                "value": "微信账号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isLicensePlate",
+                "value": "车牌号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isTax",
+                "value": "企业税号",
+                "describe": "",
+                "type": "specific"
+            },
+            {
+                "name": "isOther",
+                "value": "全网搜索",
+                "describe": "",
+                "type": "specific"
+            }
+        ],
+        "smart": [
+            {
+                "name": "isOther...",
+                "value": "智能理解,开发中，请耐心等待",
+                "describe": "",
+                "type": "smart"
+            }
+        ],
+        "command": [
+            {
+                "name": "formoule",
+                "value": "算式计算",
+                "describe": "",
+                "type": "smart"
+            }
+        ],
+        "network": [
+            {
+                "name": "百度搜索联想词",
+                "value": "输入关键词，调用百度搜索api，返回推荐搜索联想词",
+                "describe": "",
+                "type": "smart"
+            }
+        ]
+    }
+}
